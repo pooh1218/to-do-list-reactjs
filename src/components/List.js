@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 
-function List({ todos }) {
+function List({ todos ,handleRemoveTodo }) {
 
-    return(
+    const handleRemove = (index) => {
+        handleRemoveTodo(index);
+    };
+
+    return (
         <ul>
             {
-                todos.map((todo, idx) => <li key={`todo-${idx}`}>{todo}</li>)
+                todos.map((todo, idx) => <li key={`todo-${idx}`}>{todo} <button onClick={() => handleRemove(idx)}>Remove</button> </li>)
             }
         </ul>
     );

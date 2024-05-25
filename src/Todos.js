@@ -12,11 +12,17 @@ function Todos() {
     }
 
 
+    const handleRemoveTodo = (index) => {
+        const updatedTodos = todos.filter((todo, idx) => idx !== index);
+        setTodos(updatedTodos);
+    };
+
+
     return (
         <div>
             <h1>My To Do List</h1>
             <Todoadd handleAddTodo={handleAddTodo} />
-            <List todos={todos} />
+            <List todos={todos} handleRemoveTodo={handleRemoveTodo} />
         </div>
     );
 }
