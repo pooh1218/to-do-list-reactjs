@@ -11,7 +11,7 @@ function Todos() {
         setTodos([...todos, title]);
     }
 
-
+// add remove
     const handleRemoveTodo = (index) => {
         const updatedTodos = todos.filter((todo, idx) => idx !== index);
         setTodos(updatedTodos);

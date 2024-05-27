@@ -20,7 +20,7 @@ function Todoadd({handleAddTodo}) {
     }
     return (
         <form onSubmit={onSubmit}>
-            <input value={title} type="text" placeholder='Title' onChange={e => setTitle(e.target.value)} />
+            <input value={title} type="text" placeholder='Title' onChange={e => {setTitle(e.target.value)}} />
             <button type="submit">Add</button>
         </form>
     )

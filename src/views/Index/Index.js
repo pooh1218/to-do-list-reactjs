@@ -1,43 +1,21 @@
-import React from 'react';
+import React, { useState } from "react";
 
-const INITIAL_LIST = [
-  'Learn React',
-  'Learn Firebase',
-  'Learn GraphQL',
-];
-
-const Index = () => {
-  const [value, setValue] = React.useState('');
-  const [list, setList] = React.useState(INITIAL_LIST);
+function Index() {
+  const [myCar, setMyCar] = useState("Volvo");
 
   const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    if (value) {
-      setList(list.concat(value));
-    }
-
-    setValue('');
-
-    event.preventDefault();
-  };
+    setMyCar(event.target.value)
+  }
 
   return (
-    <div>
-      <ul>
-        {list.map(item => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={value} onChange={handleChange} />
-        <button type="submit">Add Item</button>
-      </form>
-    </div>
-  );
-};
+    <form>
+      <select value={myCar} onChange={handleChange}>
+        <option value="Ford">Ford</option>
+        <option value="Volvo">Volvo</option>
+        <option value="Fiat">Fiat</option>
+      </select>
+    </form>
+  )
+}
 
 export default Index;

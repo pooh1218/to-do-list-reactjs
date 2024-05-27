@@ -12,9 +12,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index/>} />
+          <Route path="/" element={<Index />} />
           {/* <Route path="/tdlist" element={<Tdlist/>} /> */}
-          <Route path="/todos" element={<Todos/>} />
+          <Route path="todos" element={<Todos/>} />
         </Routes>
       </BrowserRouter>
     </div>
